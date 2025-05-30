@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Wedding of Indra & Nurhazijah</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="cover" id="cover">
+      <div class="cover-content">
+        <p class="cover-intro">The Wedding Of</p>
+        <h1 class="cover-title">Indra & Nurhazijah</h1>
+        <div class="cover-guest-info">
+          <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+          <h2 id="guest-name">Tamu Undangan</h2>
+        </div>
+        <button class="cover-button" id="open-invitation">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+            ></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          Buka Undangan
+        </button>
+      </div>
+    </div>
+
+    <div class="main-content" id="main-content">
+      <audio id="background-music" loop>
+        <source
+          src="https://www.bensound.com/bensound-music/bensound-romantic.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+      <div class="floating-container">
+        <button id="play-pause-btn" class="floating-btn">
+          <svg
+            id="play-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <svg
+            id="pause-icon"
+            class="hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="6" y="4" width="4" height="16"></rect>
+            <rect x="14" y="4" width="4" height="16"></rect>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+          <a href="#hero" class="nav-item">Home</a>
+          <a href="#couple" class="nav-item">Couple</a>
+          <a href="#story" class="nav-item">Story</a>
+          <a href="#event" class="nav-item">Event</a>
+          <a href="#gallery" class="nav-item">Gallery</a>
+          <a href="#wishes" class="nav-item">Wishes</a>
+        </div>
+      </nav>
+
+      <header class="hero" id="hero">
+        <div class="hero-content">
+          <p class="animate-on-scroll">We Are Getting Married</p>
+          <h1 class="animate-on-scroll">Indra & Nurhazijah</h1>
+          <p class="animate-on-scroll">14 . 08 . 2025</p>
+          <div id="countdown" class="animate-on-scroll">
+            <div><span id="days">00</span>Days</div>
+            <div><span id="hours">00</span>Hours</div>
+            <div><span id="minutes">00</span>Mins</div>
+            <div><span id="seconds">00</span>Secs</div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section id="couple" class="section">
+          <div class="container">
+            <h2 class="section-title animate-on-scroll">The Happy Couple</h2>
+            <p class="section-intro animate-on-scroll">
+              "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
+              untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung
+              dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa
+              kasih dan sayang."<br />(QS. Ar-Rum: 21)
+            </p>
+            <div class="couple-wrapper">
+              <div class="couple-profile animate-on-scroll">
+                <img src="img/indra Cropped.jpg" alt="The Groom" />
+                <h3>Indra.</h3>
+                <p>Anak dari Bpk. gatau<br />& Ibu. gatau</p>
+              </div>
+              <div class="couple-separator animate-on-scroll">&</div>
+              <div class="couple-profile animate-on-scroll">
+                <img src="img/zizah Cropped.jpg" alt="The Bride" />
+                <h3>Nurhazijah</h3>
+                <p>Anak dari Bpk. gatau<br />& Ibu. gatau</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="story" class="section section-dark">
+          <div class="container">
+            <h2 class="section-title animate-on-scroll">Our Love Story</h2>
+            <div class="timeline">
+              <div class="timeline-item animate-on-scroll">
+                <div class="timeline-content">
+                  <h4>First Met</h4>
+                  <p class="timeline-date">12 June 2021</p>
+                  <p>
+                    Our journey began at a university event, where a shared
+                    smile sparked a connection that would change our lives
+                    forever.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item animate-on-scroll">
+                <div class="timeline-content">
+                  <h4>First Date</h4>
+                  <p class="timeline-date">25 June 2021</p>
+                  <p>
+                    A simple coffee date turned into hours of conversation. We
+                    knew then that this was the start of something truly
+                    special.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item animate-on-scroll">
+                <div class="timeline-content">
+                  <h4>Engaged</h4>
+                  <p class="timeline-date">1 January 2025</p>
+                  <p>
+                    Surrounded by family and twinkling lights, we promised to
+                    build a future together, sealing our commitment to a
+                    lifetime of love.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="event" class="section">
+          <div class="container">
+            <h2 class="section-title animate-on-scroll">Wedding Events</h2>
+            <div class="event-wrapper">
+              <div class="event-card animate-on-scroll">
+
+              <div class="event-card animate-on-scroll">
+                <h3>Wedding Reception</h3>
+                <p>
+                  <strong>Saturday, 14 Agustus 2025</strong><br />07:00 PM -
+                  10:00 PM
+                </p>
+                <p>Grand Ballroom, Ska Co Ex, Pekanbaru</p>
+                <a
+                  href="https://maps.app.goo.gl/AJ596njqHsGC8GBt9"
+                  target="_blank"
+                  class="btn"
+                  >View Map</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="gallery" class="section section-dark">
+          <div class="container">
+            <h2 class="section-title animate-on-scroll">Our Moments</h2>
+            <div class="gallery-grid">
+              <div class="gallery-item animate-on-scroll">
+                <img src="img/akad.jpg" alt="Gallery image 1" />
+              </div>
+              <div class="gallery-item animate-on-scroll">
+                <img src="img/salam.jpg" alt="Gallery image 2" />
+              </div>
+              <div class="gallery-item animate-on-scroll">
+                <img src="img/ttd.jpg" alt="Gallery image 3" />
+              </div>
+              <div class="gallery-item animate-on-scroll">
+                <img src="img/tunjuk buku.jpg" alt="Gallery image 4" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="wishes" class="section">
+          <div class="container">
+            <h2 class="section-title animate-on-scroll">Prayers & Wishes</h2>
+            <p class="section-intro animate-on-scroll">
+              Your prayers are the most beautiful gift. If you wish to send a
+              message, please use the form below.
+            </p>
+            <form class="wishes-form animate-on-scroll">
+              <input type="text" placeholder="Your Name" required />
+              <textarea rows="5" placeholder="Your Wishes" required></textarea>
+              <button type="submit" class="btn">Send Wishes</button>
+            </form>
+
+            <div class="gift-section animate-on-scroll">
+              <h2 class="section-title">Wedding Gift</h2>
+              <p class="section-intro">
+                Doa restu Anda merupakan karunia yang sangat berarti bagi kami.
+                Namun jika memberi adalah ungkapan tanda kasih, Anda dapat
+                memberi kado secara cashless melalui:
+              </p>
+              <div class="gift-options">
+                <div class="gift-card">
+                  <img
+                    src="img/BCA_logo_Bank_Central_Asia.png"
+                    alt="BCA Logo"
+                    class="gift-logo"
+                  />
+                  <h4>Bank Central Asia (BCA)</h4>
+                  <p class="account-number" id="bca-number">1234567890</p>
+                  <p>a.n. Nurhazijah</p>
+                  <button
+                    class="btn btn-copy"
+                    data-clipboard-target="#bca-number"
+                  >
+                    Salin Nomor
+                  </button>
+                </div>
+                <div class="gift-card">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/BRI_2020.svg/2560px-BRI_2020.svg.png"
+                    alt="BRI Logo"
+                    class="gift-logo"
+                  />
+                  <h4>Bank Rakyat Indonesia (BRI)</h4>
+                  <p class="account-number" id="bri-number">0987654321</p>
+                  <p>a.n. Indra</p>
+                  <button
+                    class="btn btn-copy"
+                    data-clipboard-target="#bri-number"
+                  >
+                    Salin Nomor
+                  </button>
+                </div>
+                <div class="gift-card">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/2560px-Logo_dana_blue.svg.png"
+                    alt="DANA Logo"
+                    class="gift-logo"
+                  />
+                  <h4>DANA</h4>
+                  <p
+                    class="account-number"
+                    id="dana-number"
+                    style="padding-top: 33px"
+                  >
+                  085263324512
+                  </p>
+                  <p>a.n. Nurhazijah</p>
+                  <button
+                    class="btn btn-copy"
+                    data-clipboard-target="#dana-number"
+                  >
+                    Salin Nomor
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="live-stream" class="section section-dark">
+          <div class="container">
+            <h2 class="section-title animate-on-scroll">Live Stream</h2>
+            <p class="section-intro animate-on-scroll">
+              For our cherished family and friends who are unable to join us in
+              person, we invite you to be a part of our celebration through our
+              live stream.
+            </p>
+            <div class="animate-on-scroll">
+              <a href="#" class="btn">Watch on YouTube Live</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <p>
+            It is with the utmost pleasure that we await your presence and
+            blessings on our special day.
+          </p>
+          <h3 class="footer-title">Indra & Nurhazijah</h3>
+          <p>
+            © <span id="year"></span> The Wedding of Indra & Nurhazijah. All
+            Rights Reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // --- Personalisasi Nama Tamu ---
+        const urlParams = new URLSearchParams(window.location.search);
+        const guestName = urlParams.get("to");
+        const guestNameElement = document.getElementById("guest-name");
+        if (guestName) {
+          guestNameElement.textContent = decodeURIComponent(
+            guestName.replace(/\+/g, " ")
+          );
+        }
+
+        // --- Logika Halaman Sampul (Cover) ---
+        const cover = document.getElementById("cover");
+        const mainContent = document.getElementById("main-content");
+        const openButton = document.getElementById("open-invitation");
+        const audio = document.getElementById("background-music");
+        const playPauseBtn = document.getElementById("play-pause-btn");
+        const playIcon = document.getElementById("play-icon");
+        const pauseIcon = document.getElementById("pause-icon");
+
+        openButton.addEventListener("click", () => {
+          cover.classList.add("hidden");
+          mainContent.classList.add("visible");
+          audio.play().catch((e) => console.error("Autoplay failed:", e));
+          playIcon.classList.add("hidden");
+          pauseIcon.classList.remove("hidden");
+          document.body.style.overflow = "auto";
+        });
+
+        // Logika Tombol Musik
+        playPauseBtn.addEventListener("click", () => {
+          if (audio.paused) {
+            audio.play();
+            playIcon.classList.add("hidden");
+            pauseIcon.classList.remove("hidden");
+          } else {
+            audio.pause();
+            playIcon.classList.remove("hidden");
+            pauseIcon.classList.add("hidden");
+          }
+        });
+
+        // --- Animasi Saat Scroll ---
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        const elementsToAnimate =
+          document.querySelectorAll(".animate-on-scroll");
+        elementsToAnimate.forEach((el) => observer.observe(el));
+
+        // --- Countdown Timer ---
+        const countdownDate = new Date("Aug 14, 2025 09:00:00").getTime();
+        setInterval(() => {
+          const now = new Date().getTime();
+          const distance = countdownDate - now;
+          document.getElementById("days").innerText = Math.floor(
+            distance / (1000 * 60 * 60 * 24)
+          )
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("hours").innerText = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          )
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("minutes").innerText = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60)
+          )
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("seconds").innerText = Math.floor(
+            (distance % (1000 * 60)) / 1000
+          )
+            .toString()
+            .padStart(2, "0");
+        }, 1000);
+
+        // --- Inisialisasi Fitur Salin/Copy ---
+        var clipboard = new ClipboardJS(".btn-copy");
+        clipboard.on("success", function (e) {
+          var originalText = e.trigger.innerHTML;
+          e.trigger.innerHTML = "Berhasil Disalin!";
+          e.clearSelection();
+          setTimeout(function () {
+            e.trigger.innerHTML = originalText;
+          }, 2000); // Kembalikan teks setelah 2 detik
+        });
+        clipboard.on("error", function (e) {
+          console.error("Action:", e.action);
+          console.error("Trigger:", e.trigger);
+        });
+
+        // --- Update Tahun di Footer ---
+        document.getElementById("year").textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>
