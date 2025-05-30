@@ -45,10 +45,7 @@
 
     <div class="main-content" id="main-content">
       <audio id="background-music" loop>
-        <source
-          src="https://www.bensound.com/bensound-music/bensound-romantic.mp3"
-          type="audio/mpeg"
-        />
+        <source src="musik/sampai jadi debu_nointro.mp3" type="audio/mpeg" />
       </audio>
       <div class="floating-container">
         <button id="play-pause-btn" class="floating-btn">
@@ -85,7 +82,7 @@
         </button>
       </div>
 
-      <nav class="navbar" id="navbar">
+      <nav class="navbar" id="bottom-navbar">
         <div class="container navbar-container">
           <a href="#hero" class="nav-item">Home</a>
           <a href="#couple" class="nav-item">Couple</a>
@@ -98,14 +95,14 @@
 
       <header class="hero" id="hero">
         <div class="hero-content">
-          <p class="animate-on-scroll">We Are Getting Married</p>
-          <h1 class="animate-on-scroll">Indra & Nurhazijah</h1>
-          <p class="animate-on-scroll">14 . 08 . 2025</p>
+          <p class="animate-on-scroll hero-subtext">We Are Getting Married</p>
+          <h1 class="animate-on-scroll hero-main-title">Indra & Nurhazijah</h1>
+          <p class="animate-on-scroll hero-wedding-date">14 . 08 . 2025</p>
           <div id="countdown" class="animate-on-scroll">
-            <div><span id="days">00</span>Days</div>
-            <div><span id="hours">00</span>Hours</div>
-            <div><span id="minutes">00</span>Mins</div>
-            <div><span id="seconds">00</span>Secs</div>
+            <div class="countdown-item"><span id="days">00</span>Days</div>
+            <div class="countdown-item"><span id="hours">00</span>Hours</div>
+            <div class="countdown-item"><span id="minutes">00</span>Mins</div>
+            <div class="countdown-item"><span id="seconds">00</span>Secs</div>
           </div>
         </div>
       </header>
@@ -122,13 +119,21 @@
             </p>
             <div class="couple-wrapper">
               <div class="couple-profile animate-on-scroll">
-                <img src="img/indra Cropped.jpg" alt="The Groom" />
+                <img
+                  src="img/indra Cropped.jpg"
+                  alt="The Groom"
+                  class="couple-img"
+                />
                 <h3>Indra.</h3>
                 <p>Anak dari Bpk. gatau<br />& Ibu. gatau</p>
               </div>
               <div class="couple-separator animate-on-scroll">&</div>
               <div class="couple-profile animate-on-scroll">
-                <img src="img/zizah Cropped.jpg" alt="The Bride" />
+                <img
+                  src="img/zizah Cropped.jpg"
+                  alt="The Bride"
+                  class="couple-img"
+                />
                 <h3>Nurhazijah</h3>
                 <p>Anak dari Bpk. gatau<br />& Ibu. gatau</p>
               </div>
@@ -181,8 +186,6 @@
           <div class="container">
             <h2 class="section-title animate-on-scroll">Wedding Events</h2>
             <div class="event-wrapper">
-              <div class="event-card animate-on-scroll">
-
               <div class="event-card animate-on-scroll">
                 <h3>Wedding Reception</h3>
                 <p>
@@ -249,6 +252,7 @@
                     class="gift-logo"
                   />
                   <h4>Bank Central Asia (BCA)</h4>
+                  <p class="gift-card-subtitle"> </p>
                   <p class="account-number" id="bca-number">1234567890</p>
                   <p>a.n. Nurhazijah</p>
                   <button
@@ -265,6 +269,7 @@
                     class="gift-logo"
                   />
                   <h4>Bank Rakyat Indonesia (BRI)</h4>
+                  <p class="gift-card-subtitle"> </p>
                   <p class="account-number" id="bri-number">0987654321</p>
                   <p>a.n. Indra</p>
                   <button
@@ -281,13 +286,8 @@
                     class="gift-logo"
                   />
                   <h4>DANA</h4>
-                  <p
-                    class="account-number"
-                    id="dana-number"
-                    style="padding-top: 33px"
-                  >
-                  085263324512
-                  </p>
+                  <p class="gift-card-subtitle"> </p>
+                  <p class="account-number" id="dana-number">085263324512</p>
                   <p>a.n. Nurhazijah</p>
                   <button
                     class="btn btn-copy"
@@ -322,7 +322,7 @@
             It is with the utmost pleasure that we await your presence and
             blessings on our special day.
           </p>
-          <h3 class="footer-title">Indra & Nurhazijah</h3>
+          <h3 class="footer-title hero-main-title">Indra & Nurhazijah</h3>
           <p>
             © <span id="year"></span> The Wedding of Indra & Nurhazijah. All
             Rights Reserved.
@@ -332,20 +332,17 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
-
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        // --- Personalisasi Nama Tamu ---
         const urlParams = new URLSearchParams(window.location.search);
         const guestName = urlParams.get("to");
         const guestNameElement = document.getElementById("guest-name");
-        if (guestName) {
+        if (guestNameElement && guestName) {
           guestNameElement.textContent = decodeURIComponent(
             guestName.replace(/\+/g, " ")
           );
         }
 
-        // --- Logika Halaman Sampul (Cover) ---
         const cover = document.getElementById("cover");
         const mainContent = document.getElementById("main-content");
         const openButton = document.getElementById("open-invitation");
@@ -354,87 +351,117 @@
         const playIcon = document.getElementById("play-icon");
         const pauseIcon = document.getElementById("pause-icon");
 
-        openButton.addEventListener("click", () => {
-          cover.classList.add("hidden");
-          mainContent.classList.add("visible");
-          audio.play().catch((e) => console.error("Autoplay failed:", e));
-          playIcon.classList.add("hidden");
-          pauseIcon.classList.remove("hidden");
-          document.body.style.overflow = "auto";
-        });
-
-        // Logika Tombol Musik
-        playPauseBtn.addEventListener("click", () => {
-          if (audio.paused) {
-            audio.play();
+        if (
+          openButton &&
+          cover &&
+          mainContent &&
+          audio &&
+          playIcon &&
+          pauseIcon
+        ) {
+          openButton.addEventListener("click", () => {
+            cover.classList.add("hidden");
+            mainContent.classList.add("visible");
+            audio.play().catch((e) => {}); // Simplified error handling
             playIcon.classList.add("hidden");
             pauseIcon.classList.remove("hidden");
-          } else {
-            audio.pause();
-            playIcon.classList.remove("hidden");
-            pauseIcon.classList.add("hidden");
-          }
-        });
+            document.body.style.overflow = "auto";
+          });
+        }
 
-        // --- Animasi Saat Scroll ---
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-              }
-            });
-          },
-          { threshold: 0.1 }
-        );
+        if (playPauseBtn && audio && playIcon && pauseIcon) {
+          playPauseBtn.addEventListener("click", () => {
+            if (audio.paused) {
+              audio.play();
+              playIcon.classList.add("hidden");
+              pauseIcon.classList.remove("hidden");
+            } else {
+              audio.pause();
+              playIcon.classList.remove("hidden");
+              pauseIcon.classList.add("hidden");
+            }
+          });
+        }
+
         const elementsToAnimate =
           document.querySelectorAll(".animate-on-scroll");
-        elementsToAnimate.forEach((el) => observer.observe(el));
+        if (elementsToAnimate.length > 0) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-visible");
+                }
+              });
+            },
+            { threshold: 0.1 }
+          );
+          elementsToAnimate.forEach((el) => observer.observe(el));
+        }
 
-        // --- Countdown Timer ---
-        const countdownDate = new Date("Aug 14, 2025 09:00:00").getTime();
-        setInterval(() => {
-          const now = new Date().getTime();
-          const distance = countdownDate - now;
-          document.getElementById("days").innerText = Math.floor(
-            distance / (1000 * 60 * 60 * 24)
-          )
-            .toString()
-            .padStart(2, "0");
-          document.getElementById("hours").innerText = Math.floor(
-            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-          )
-            .toString()
-            .padStart(2, "0");
-          document.getElementById("minutes").innerText = Math.floor(
-            (distance % (1000 * 60 * 60)) / (1000 * 60)
-          )
-            .toString()
-            .padStart(2, "0");
-          document.getElementById("seconds").innerText = Math.floor(
-            (distance % (1000 * 60)) / 1000
-          )
-            .toString()
-            .padStart(2, "0");
-        }, 1000);
+        const countdownContainer = document.getElementById("countdown");
+        if (countdownContainer) {
+          const countdownDate = new Date("Aug 14, 2025 09:00:00").getTime();
+          const countdownInterval = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
 
-        // --- Inisialisasi Fitur Salin/Copy ---
-        var clipboard = new ClipboardJS(".btn-copy");
-        clipboard.on("success", function (e) {
-          var originalText = e.trigger.innerHTML;
-          e.trigger.innerHTML = "Berhasil Disalin!";
-          e.clearSelection();
-          setTimeout(function () {
-            e.trigger.innerHTML = originalText;
-          }, 2000); // Kembalikan teks setelah 2 detik
-        });
-        clipboard.on("error", function (e) {
-          console.error("Action:", e.action);
-          console.error("Trigger:", e.trigger);
-        });
+            const daysSpan = document.getElementById("days");
+            const hoursSpan = document.getElementById("hours");
+            const minutesSpan = document.getElementById("minutes");
+            const secondsSpan = document.getElementById("seconds");
 
-        // --- Update Tahun di Footer ---
-        document.getElementById("year").textContent = new Date().getFullYear();
+            if (distance < 0) {
+              clearInterval(countdownInterval);
+              countdownContainer.innerHTML =
+                "<p class='countdown-finished'>The Wedding Has Begun!</p>";
+              return;
+            }
+
+            if (daysSpan)
+              daysSpan.innerText = Math.floor(distance / (1000 * 60 * 60 * 24))
+                .toString()
+                .padStart(2, "0");
+            if (hoursSpan)
+              hoursSpan.innerText = Math.floor(
+                (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+              )
+                .toString()
+                .padStart(2, "0");
+            if (minutesSpan)
+              minutesSpan.innerText = Math.floor(
+                (distance % (1000 * 60 * 60)) / (1000 * 60)
+              )
+                .toString()
+                .padStart(2, "0");
+            if (secondsSpan)
+              secondsSpan.innerText = Math.floor(
+                (distance % (1000 * 60)) / 1000
+              )
+                .toString()
+                .padStart(2, "0");
+          }, 1000);
+        }
+
+        if (
+          typeof ClipboardJS !== "undefined" &&
+          document.querySelectorAll(".btn-copy").length > 0
+        ) {
+          var clipboard = new ClipboardJS(".btn-copy");
+          clipboard.on("success", function (e) {
+            var originalText = e.trigger.textContent;
+            e.trigger.textContent = "Disalin!"; // Shorter text
+            e.clearSelection();
+            setTimeout(function () {
+              e.trigger.textContent = originalText;
+            }, 1500); // Shorter timeout
+          });
+        }
+
+        const yearEl = document.getElementById("year");
+        if (yearEl) {
+          yearEl.textContent = new Date().getFullYear();
+        }
       });
     </script>
   </body>
